@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import * as Api from '../api';
+import * as Api from '../../api';
 import * as ActionTypes from './actionTypes';
 
 const fetchBooksRequest = () => ({
@@ -14,16 +14,6 @@ const fetchBooksSuccess = (books) => ({
 const fetchBooksFailed = (errorMessage) => ({
   type: ActionTypes.FETCH_BOOKS_FAILED,
   payload: errorMessage,
-});
-
-export const addBookToCart = (book) => ({
-  type: ActionTypes.ADD_BOOK_TO_CART,
-  payload: book,
-});
-
-export const removeBookFromCart = (book) => ({
-  type: ActionTypes.REMOVE_BOOK_FROM_CART,
-  payload: book,
 });
 
 export const fetchBooks = () => (dispatch) => {

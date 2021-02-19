@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import PropTypes from 'prop-types';
 
-import { addBookToCart } from '../../store/actions';
+import { addBookToCart } from '../../store/cart/actions';
 import BookCard from '../BookCard';
 import styles from './index.module.css';
 

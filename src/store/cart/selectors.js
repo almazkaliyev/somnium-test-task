@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 
-export const selectBooks = (state) => state.items;
-export const selectCartBooks = (state) => state.cart;
+export const selectCartState = (state) => state.cart;
+export const selectCartBooks = (state) => selectCartState(state).items;
 
 export const selectTotalSum = createSelector(selectCartBooks, (books) =>
   books.length

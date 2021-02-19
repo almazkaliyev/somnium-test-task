@@ -3,8 +3,8 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { removeBookFromCart } from '../store/actions';
-import { selectCartBooks, selectTotalSum } from '../store/selectors';
+import { removeBookFromCart } from '../store/cart/actions';
+import { selectCartBooks, selectTotalSum } from '../store/cart/selectors';
 
 export default () => {
   const dispatch = useDispatch();

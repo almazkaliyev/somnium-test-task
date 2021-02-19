@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-import { selectCartBooksCount } from '../../store/selectors';
+import { selectCartBooksCount } from '../../store/cart/selectors';
 
 export default () => {
   const cartBooksCount = useSelector(selectCartBooksCount);
