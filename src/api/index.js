@@ -20,8 +20,13 @@ export const fetchCartBooks = async () => {
 
 export const fetchAddBookToCart = async (book) => {
   try {
-    const { data } = await axios.post('/cart', book);
-    return data;
+    const resBooks = await axios.get('/cart');
+    const index = resBooks.data.findIndex((item) => item.title === book.title);
+    if (index === -1) {
+      const { data } = await axios.post('/cart', book);
+      return data;
+    }
+    return null;
   } catch (e) {
     throw new Error(e);
   }

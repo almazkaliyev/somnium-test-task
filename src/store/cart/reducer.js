@@ -28,15 +28,11 @@ export default produce((draft, action) => {
       draft.errorMessage = action.payload;
       break;
 
-    case ActionTypes.ADD_BOOK_TO_CART: {
-      const index = draft.items.findIndex(
-        (book) => book.id === action.payload.id
-      );
-      if (index === -1) {
+    case ActionTypes.ADD_BOOK_TO_CART:
+      if (action.payload) {
         draft.items.push(action.payload);
-      } // skip re-adding
+      }
       break;
-    }
 
     case ActionTypes.REMOVE_BOOK_FROM_CART: {
       const index = draft.items.findIndex(
