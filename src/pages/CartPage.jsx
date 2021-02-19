@@ -1,15 +1,20 @@
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { removeBookFromCart } from '../store/cart/actions';
+import { fetchCartBooks, removeBookFromCart } from '../store/cart/actions';
 import { selectCartBooks, selectTotalSum } from '../store/cart/selectors';
 
 export default () => {
   const dispatch = useDispatch();
   const books = useSelector(selectCartBooks);
   const total = useSelector(selectTotalSum);
+
+  React.useEffect(() => {
+    dispatch(fetchCartBooks());
+  }, []);
 
   return (
     <section>
